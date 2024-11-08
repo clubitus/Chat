@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Chatbox</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="connectbar">
+      <ul>
+        <li><span id='connecStatus'></span><button class="nMode" onclick="createRequest()">New Chat</button></li>
+        <li>
+          <span>Code : </span>
+          <input type="text" id="code" minlength="4" maxlength="4" size="4" />
+          <span id="errMess" style="color: red"></span>
+        </li>
+      </ul>
+    </div>
+    <div class="messagebar">
+      <ul>
+        <li>
+          <span>Message :</span>
+          <input type="text" id="message" minlength="0" maxlength="100" size="" />
+        </li>
+        <li><button onclick="sendMessage()">Send</button></li>
+        <li>
+          <span>File :</span>
+          <input type="file" id="upFile" name="file" />
+        </li>
+        <li><button onclick="sendFile()">Upload</button></li>
+      </ul>
+    </div>
+    <div class ="chatbox">
+      <iframe title="messages" width="640" height="700" ></iframe>
+      
+    
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
