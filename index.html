@@ -9,7 +9,7 @@
   <body>
     <div class="connectbar">
       <ul>
-        <li><span id='connecStatus'></span><button class="nMode" onclick="createRequest()">New Chat</button></li>
+        <li><span id="connecStatus"></span><button class="nMode" onclick="createRequest()">New Chat</button></li>
         <li>
           <span>Code : </span>
           <input type="text" id="code" minlength="4" maxlength="4" size="4" />
@@ -31,12 +31,10 @@
         <li><button onclick="sendFile()">Upload</button></li>
       </ul>
     </div>
-    <div class ="chatbox">
-      <iframe title="messages" width="640" height="700" ></iframe>
+    <div class="chatbox" width = '500px' height = '600px'>
       
-    
+      
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>

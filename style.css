@@ -20,6 +20,7 @@ span {
 }
 .messagebar {
     text-align: center;
+    margin-left: -30px;
 }
 .messagebar ul li {
     list-style: none;
@@ -38,4 +39,11 @@ iframe {
 
     margin: 0 auto;
     background-color: rgb(249, 241, 255);
+}
+
+.chatbox {
+    width: 600px;
+    height: 1080px;
+    margin: 0 auto;
+    background-color: #fefaff;
 }
