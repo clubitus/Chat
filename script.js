@@ -12,9 +12,10 @@ function connectionFeedback() {
         document.getElementById("connecStatus").innerHTML = "disconnected ";
     }
 }
-function printToUser(){
+function printToUser(messageToShow){
+    var message = messageToShow;
     const p = document.createElement("p");
-    document.getElementById("chat").appendChild(p);
+    document.getElementById("chatbox").appendChild(p).innerHTML = message;
     
 }
 function cacheValues() {
@@ -27,4 +28,23 @@ function cacheValues() {
 let statusC = false;
 let messageRecieved;
 let fileRecieved;
+let user1 = 'you : ';
+let user2 = 'anon : ';
 cacheValues();
+
+//----------------------------------------------------------------------------------------------
+//                                  User Buttons
+//----------------------------------------------------------------------------------------------
+function createRequest(){
+    if (statusC == false){
+        statusC = true;
+    }
+    else{
+        statusC = false;
+    }
+    message = 'bobby is a fucking bitch he deserves to die, fuck angel asked me for new content i want to fucking die help me, get me out of here';
+    userT = user1;
+    messageToShow = userT + message;
+    printToUser(messageToShow);
+    cacheValues();
+}

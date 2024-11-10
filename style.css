@@ -33,17 +33,10 @@ span {
     color:green;
 }
 
-
-iframe {
-    display: block;
-
-    margin: 0 auto;
-    background-color: rgb(249, 241, 255);
-}
-
 .chatbox {
     width: 600px;
     height: 1080px;
     margin: 0 auto;
     background-color: #fefaff;
+    overflow-y: scroll;
 }
