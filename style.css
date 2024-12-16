@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(241, 227, 254);
+    background-color: rgb(246, 230, 255);
 }
 button {
     background-color: rgb(255, 155, 155);
@@ -39,4 +39,14 @@ span {
     margin: 0 auto;
     background-color: #fefaff;
     overflow-y: scroll;
+}
+.yours{
+    color: #005000;
+}
+.anon{
+    color:#00003c    
+}
+.yours a{
+    text-decoration: none;
+    color: red;
 }

@@ -11,35 +11,36 @@ function connectionFeedback() {
         document.getElementById("connecStatus").classList.remove("statusY");
         document.getElementById("connecStatus").innerHTML = "disconnected ";
     }
-}
-function printToUser(messageToShow) {
-    var message = messageToShow;
-    const p = document.createElement("p");
-    document.getElementById("chatbox").appendChild(p).innerHTML = message;
-}
-function downToUser(file,message) {
-    const p = document.createElement("a");
-    document.getElementById("chatbox").appendChild(p).href = file;
-    document.getElementById("chatbox").appendChild(p).innerHTML = message;
-    document.getElementById("chatbox").appendChild(p).download = 'file';
-}
+} // fonctionnel
+function printToUser(messageToShow,func,booler) {
+    const p = document.createElement("p"); const a = document.createElement("a"); //creation de l'enfant
+    
+    if (booler == true) { // si est message
+        p.innerHTML = messageToShow; p.className = func; //texte + couleur
+        document.getElementById("chatbox").appendChild(p); // ajout au chat
+    }
+    else { // si est fichier
+        prntmessage = user2 + fileSent.name; if (func == 'yours') { prntmessage = user1 + fileSent.name; } // Utilisateur 1 ou 2 ?
+        a.href = messageToShow; a.download = fileSent.name; a.innerHTML = prntmessage; // Lien de telechargement et texte
+        document.getElementById("chatbox").appendChild(a); // ajout au chat 
+    }
+        
+} // fonctionnel
 function cacheValues() {
     roomCode = document.getElementById("code").value;
-    fileSent = document.getElementById("upFile").innerHTML;
+    fileSent = document.getElementById("upFile").files[0];
     messageSent = document.getElementById("message").value;
     connectionFeedback();
-}
-function isConnected() {
+} // cache value
+function isConnected() { 
     return bool;
-}
-
+} // /!\ A COMPLETER
+//declaration valeurs
 let statusC = false;
-let messageRecieved;
-let fileRecieved;
-let user1 = "you : ";
-let user2 = "anon : ";
-cacheValues();
+let messageRecieved; let fileRecieved;
+let user1 = "You: "; let user2 = "Anon: ";
 
+cacheValues();
 //----------------------------------------------------------------------------------------------
 //                                  User Buttons
 //----------------------------------------------------------------------------------------------
@@ -55,12 +56,12 @@ function sendMessage() {
     cacheValues();
     message = user1 + messageSent;
     document.getElementById("message").value = "";
-    printToUser(message);
+    printToUser(message,"yours",true);
 }
 function sendFile() {
     cacheValues();
-    message = fileSent;
+    message = URL.createObjectURL(fileSent);
     var prntmss = user1 + "Download";
-    document.getElementById("upFile").innerHTML = null;
-    downToUser(message, prntmss);
+    document.getElementById("upFile");
+    printToUser(message, "yours", false);
 }
