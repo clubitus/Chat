@@ -12,17 +12,17 @@
         <li><span id="connecStatus"></span><button class="nMode" onclick="createRequest()">New Chat</button></li>
         <li>
           <span>Code: </span>
-          <input type="text" id="code" minlength="4"  size="4" />
+          <input type="text" id="code" maxlength="4" size="4" placeholder="ABCD" />
           <span id="errMess" style="color: red"></span>
         </li>
-        <li><button onclick="acceptRequest()" class="nMode">Accept Connection</button></li>
+        <li><button onclick="acceptRequest()" class="nMode">Join Chat</button></li>
       </ul>
     </div>
     <div class="messagebar">
       <ul>
         <li>
           <span>Message:</span>
-          <input type="text" id="message" minlength="0" maxlength="100" size="" />
+          <input type="text" id="message" minlength="0" maxlength="100" size="30" />
         </li>
         <li><button onclick="sendMessage()">Send</button></li>
         <li>
@@ -32,10 +32,10 @@
         <li><button onclick="sendFile()">Upload</button></li>
       </ul>
     </div>
-    <div class="chatbox" width = '500px' height = '600px' id='chatbox'>
-      
-      
+    <div class="chatbox" id='chatbox'>
+      <p class="system">Welcome to Chat.JS ! Click "New Chat" to create a room or enter a 4-character code to join.</p>
     </div>
+    <p class='logo'><img src='logo.png'></p>
     <script src="script.js"></script>
   </body>
 </html>
