@@ -176,7 +176,7 @@ app.get('/room/:code/iceCandidates/:type', (req, res) => {
   });
 });
 
-// Generate a random 4-character room code
+// Creer un code
 function generateRoomCode() {
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
   let result = '';
@@ -186,7 +186,6 @@ function generateRoomCode() {
   return result;
 }
 
-// Clean up rooms older than 1 hour
 function cleanupOldRooms() {
   const oneHourAgo = new Date();
   oneHourAgo.setHours(oneHourAgo.getHours() - 1);
@@ -198,10 +197,9 @@ function cleanupOldRooms() {
   });
 }
 
-// Serve static files from the 'public' directory
+
 app.use(express.static('public'));
 
-// Start server
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`Signaling server running on port ${PORT}`);
@@ -212,7 +210,6 @@ server.listen(PORT, () => {
   
   for (const name of Object.keys(nets)) {
     for (const net of nets[name]) {
-      // Skip over non-IPv4 and internal (i.e. 127.0.0.1) addresses
       if (net.family === 'IPv4' && !net.internal) {
         console.log(`  http://${net.address}:${PORT}`);
       }
